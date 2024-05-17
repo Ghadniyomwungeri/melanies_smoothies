@@ -43,4 +43,5 @@ if ingredients_list:
 
 # Call the Fruityvice API from Our SniS App!
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response.json())
+#Put the JSON into a Dataframe
+fv_df=st.dataframe(data=fruityvice_response.json(), use_container_width=True)
