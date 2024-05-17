@@ -24,8 +24,9 @@ if ingredients_list:
     ingredients_string =''
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
+        st.subheader(fruit_chosen + 'Nutrition Information')
         # Call the Fruityvice API from Our SniS App!
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_chosen)
         #Put the JSON into a Dataframe
         fv_df=st.dataframe(data=fruityvice_response.json(), use_container_width=True)
         
